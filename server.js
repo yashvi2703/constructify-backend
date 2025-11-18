@@ -211,6 +211,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
+import morgan from "morgan";
 import chartRoutes from "./routes/chartRoutes.js";
 import Material from "./models/Material.js";
 import materialsRouter from "./routes/materials.js";
@@ -227,6 +228,7 @@ dotenv.config();
 
 const app = express();
 
+app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json({ limit: '10mb' })); // Increase payload limit for PDF data
 app.use("/api/charts", chartRoutes);
