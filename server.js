@@ -24,7 +24,7 @@
 
 
 // // Connect MongoDB
-// mongoose.connect("mongodb://localhost:27017/ConstructifyDB")
+// mongoose.connect(process.env.MONGODB_URI)
 //   .then(() => console.log("MongoDB Connected"))
 //   .catch(err => console.error(err));
 
@@ -240,7 +240,7 @@ app.use("/api/invoices", invoicesRouter);
 
 // Connect MongoDB
 mongoose
-  .connect("mongodb://localhost:27017/ConstructifyDB")
+  .connect(process.env.MONGODB_URI)
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.error(err));
 

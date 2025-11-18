@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // Connect to MongoDB
-mongoose.connect("mongodb://localhost:27017/ConstructifyDB")
+mongoose.connect(process.env.MONGODB_URI)
   .then(async () => {
     console.log("Connected to MongoDB");
 
